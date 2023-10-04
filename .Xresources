@@ -1,0 +1,101 @@
+! Xft.dpi: 96
+Xft.dpi: 120
+!Xft.dpi: 141
+Xft.autohint: 0
+Xft.lcdfilter: lcdlight
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+Xcursor.theme: Paper
+! Xcursor.theme: Qogir-dark
+Xcursor.size: 32
+
+urxvt.loginShell: true
+urxvt.scrollBar: false
+!urxvt.font: xft:Meslo LG S:size=12
+urxvt.font: xft:Fira Code Medium:size=12
+urxvt.letterSpace: 1
+!urxvt.perl-lib: /home/archie/.urxvt/urxvt-perl
+URxvt.perl-ext-common: default,matcher,-selection,unichr
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.urgentOnBell: true
+URxvt.matcher.button: 1
+urxvt.saveLines: 32767
+urxvt.cursorBlink: true
+urxvt.cursorUnderline: true
+urxvt.iso14755: false
+
+urxvt*depth: 32
+! *.fading: 5
+! *pointerColorBackground: #357a15
+! *pointerColorForeground: #4db41e
+
+*colorIT: #87af5f
+*colorBD: #d7d7d7
+*colorUL: #87afd7
+
+
+! grayscale.dark
+
+! special
+*.foreground:   #b9b9b9
+*.background:   #212426
+*.cursorColor:  #b9b9b9
+*.fadeColor:    #26292c
+
+! black
+*.color0:       #101010
+*.color8:       #525252
+
+! red
+*.color1:       #7c7c7c
+*.color9:       #7c7c7c
+
+! green
+*.color2:       #8e8e8e
+*.color10:      #8e8e8e
+
+! yellow
+*.color3:       #a0a0a0
+*.color11:      #a0a0a0
+
+! blue
+*.color4:       #686868
+*.color12:      #686868
+
+! magenta
+*.color5:       #747474
+*.color13:      #747474
+
+! cyan
+*.color6:       #868686
+*.color14:      #868686
+
+! white
+*.color7:       #b9b9b9
+*.color15:      #f7f7f7
+
+
+
+
+! nord.dark
+
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+

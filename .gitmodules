@@ -1,0 +1,7 @@
+[submodule ".config/awesome/sharedtags"]
+	path = .config/awesome/sharedtags
+	url = https://github.com/Drauthius/awesome-sharedtags.git
+[submodule ".config/awesome/net_widgets"]
+	path = .config/awesome/net_widgets
+	url = https://github.com/dnlklmts/net_widgets.git
+	branch = main

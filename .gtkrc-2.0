@@ -1,0 +1,12 @@
+gtk-theme-name = "Nordic"
+gtk-icon-theme-name = "Papirus-Dark"
+gtk-cursor-theme-name = "Paper"
+gtk-cursor-theme-size = "32"
+gtk-font-name = "Cantarell 11"
+
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"
+
+gtk-show-unicode-menu = "true"
