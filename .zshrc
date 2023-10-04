@@ -133,6 +133,10 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
+bindkey -s '^F' 'tmux-sessionizer^M'
+bindkey -s '^T' 'tmux-sessionizer ~/.config/tmux/^M'
+bindkey -s '^V' 'tmux-sessionizer ~/.config/nvim/^M'
+
 export KEYTIMEOUT=1
 
 ## Aliases
