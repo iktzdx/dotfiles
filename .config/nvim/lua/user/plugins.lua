@@ -28,6 +28,7 @@ local plugins = {
     -- Highlight syntax
     {
         'nvim-treesitter/nvim-treesitter',
+        event = { "BufReadPre", "BufNewFile" },
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
@@ -37,13 +38,13 @@ local plugins = {
     'nvim-treesitter/nvim-treesitter-context',
 
     -- Add text objects via tree-sitter
-    -- {
-    --     'nvim-treesitter/nvim-treesitter-textobjects',
-    --     dependencies = { 'nvim-treesitter/nvim-treesitter'},
-    --     init = function ()
-    --         -- leave it empty
-    --     end
-    -- },
+    {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        init = function()
+            -- leave it empty
+        end
+    },
 
     -- Add/change/delete surrounding delimiter pairs with ease
     {

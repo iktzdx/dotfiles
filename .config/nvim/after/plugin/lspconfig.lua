@@ -29,6 +29,7 @@ require('mason-lspconfig').setup({
         'lua_ls',
         'gopls',
         'tsserver',
+        'bashls'
     }
 })
 
@@ -145,6 +146,7 @@ lspconfig.gopls.setup {
     },
 }
 
+-- TypeScript setup
 lspconfig.tsserver.setup {
     capabilities = capabilities,
 
@@ -154,6 +156,19 @@ lspconfig.tsserver.setup {
         hostInfo = "neovim"
     },
     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+    single_file_support = true,
+}
+
+-- Bash setup
+lspconfig.bashls.setup {
+    capabilities = capabilities,
+    cmd = { "bash-language-server", "start" },
+    filetypes = { "sh" },
+    settings = {
+        bashIde = {
+            globPattern = "*@(.sh|.inc|.bash|.command)"
+        }
+    },
     single_file_support = true,
 }
 
