@@ -33,25 +33,26 @@ local plugins = {
             ts_update()
         end,
     },
+    -- Highlight current context using tree-sitter
     'nvim-treesitter/nvim-treesitter-context',
-    -- Treat tree-sitter nodes as text objects
-    {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        dependencies = { 'nvim-treesitter/nvim-treesitter'},
-        init = function ()
-            -- leave it empty
-        end
-    },
-    -- Manipulate text objects
+
+    -- Add text objects via tree-sitter
+    -- {
+    --     'nvim-treesitter/nvim-treesitter-textobjects',
+    --     dependencies = { 'nvim-treesitter/nvim-treesitter'},
+    --     init = function ()
+    --         -- leave it empty
+    --     end
+    -- },
+
+    -- Add/change/delete surrounding delimiter pairs with ease
     {
         -- https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
+            require("nvim-surround").setup({})
         end
     },
     -- Jump between buffers with ez
@@ -66,6 +67,7 @@ local plugins = {
     'williamboman/mason-lspconfig.nvim',
     -- Autocompletion
     'hrsh7th/nvim-cmp',
+
     -- Snippets
     {
         'L3MON4D3/LuaSnip',
@@ -81,8 +83,10 @@ local plugins = {
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-nvim-lua',
+
     -- Auto-pair brackets
     'windwp/nvim-autopairs',
+
     -- Golang integration
     {
         "olexsmir/gopher.nvim",
@@ -91,16 +95,17 @@ local plugins = {
             "nvim-treesitter/nvim-treesitter",
         },
     },
+
+    -- Comment plugin that supports treesitter, dot repeat, left-right/up-down motions, etc.
     {
         'numToStr/Comment.nvim',
-        opts = {
-            -- add any options here
-        },
+        opts = {},
         lazy = false,
     },
+
     -- Treat indentation as a text object
     -- https://github.com/michaeljsmith/vim-indent-object#usage
-    'michaeljsmith/vim-indent-object',
+    -- 'michaeljsmith/vim-indent-object',
 }
 
 
