@@ -137,6 +137,10 @@ bindkey -s '^[f' 'tmux-sessionizer^M'
 bindkey -s '^[t' 'tmux-sessionizer ~/.config/tmux/^M'
 bindkey -s '^[v' 'tmux-sessionizer ~/.config/nvim/^M'
 
+## fzf
+source '/usr/share/fzf/key-bindings.zsh'
+source '/usr/share/fzf/completion.zsh'
+
 export KEYTIMEOUT=1
 
 ## Aliases
