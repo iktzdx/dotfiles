@@ -21,6 +21,9 @@ vim.keymap.set("n", "<leader>tn", ":tabnew %<CR>")
 -- close the current tab
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
 
+--set the current directory for the current window
+vim.keymap.set("n", "<leader>cd", ":lcd #<CR>")
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
