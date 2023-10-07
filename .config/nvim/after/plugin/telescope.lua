@@ -1,5 +1,13 @@
-local ok, builtin = pcall(require, 'telescope.builtin')
-if not ok then
+local t_ok, telescope = pcall(require, 'telescope')
+if not t_ok then
+    return
+end
+
+telescope.setup()
+-- telescope.load_extension('dap')
+
+local tb_ok, builtin = pcall(require, 'telescope.builtin')
+if not tb_ok then
     return
 end
 

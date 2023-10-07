@@ -96,6 +96,13 @@ local plugins = {
             "nvim-treesitter/nvim-treesitter",
         },
     },
+    -- Debugging
+    'mfussenegger/nvim-dap',
+    'leoluz/nvim-dap-go',
+    'rcarriga/nvim-dap-ui',
+    { "folke/neodev.nvim", opts = {} },
+    'nvim-telescope/telescope-dap.nvim',
+    'theHamsta/nvim-dap-virtual-text',
 
     -- Comment plugin that supports treesitter, dot repeat, left-right/up-down motions, etc.
     {
