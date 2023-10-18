@@ -10,6 +10,7 @@ require 'nvim-treesitter.configs'.setup {
         "javascript",
         "json",
         "lua",
+        "make",
         "markdown",
         "markdown_inline",
         "tsx",

@@ -110,7 +110,15 @@ local plugins = {
         opts = {},
         lazy = false,
     },
-
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    },
     -- Treat indentation as a text object
     -- https://github.com/michaeljsmith/vim-indent-object#usage
     -- 'michaeljsmith/vim-indent-object',
