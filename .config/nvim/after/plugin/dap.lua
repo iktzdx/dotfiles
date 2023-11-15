@@ -23,6 +23,19 @@ dap.configurations.go = {
     },
     {
         type = "delve",
+        name = "Debug (go.mod)",
+        request = "launch",
+        program = "./${relativeFileDirname}"
+    },
+    {
+        type = "delve",
+        name = "Attach (:38697)",
+        request = "attach",
+        mode = "remote",
+        port = "38697",
+    },
+    {
+        type = "delve",
         name = "Debug test", -- configuration for debugging test files
         request = "launch",
         mode = "test",
