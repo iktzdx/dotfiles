@@ -12,10 +12,9 @@ export DESKTOP_SESSION=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export SAL_USE_VCLPLUGIN=gtk3
 
-export PATH="${PATH}:$HOME/.local/bin"
 export VAGRANT_HOME="$HOME/.local/share/vagrant"
 export GOPATH="$HOME/.local/share/go"
-export PATH=$PATH:$GOPATH/bin
+export PATH="${PATH}:$HOME/.local/bin:$GOPATH/bin"
 
 export EDITOR=nvim
 export VISUAL=nvim
