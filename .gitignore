@@ -29,8 +29,6 @@
 !.config/mpd/mpd.conf
 !.config/mpv/
 !.config/mpv/**/*
-!.config/nvim/
-!.config/nvim/**/*
 !.config/picom/
 !.config/picom/picom.conf
 !.config/pulse/
@@ -41,7 +39,6 @@
 !.config/systemd/**/*
 !.config/tmux/
 !.config/tmux/tmux.conf
-.config/nvim/lazy-lock.json
 .config/mpv/watch_later/
 .config/systemd/user/default.target.wants/
 .config/tmux/logging/
