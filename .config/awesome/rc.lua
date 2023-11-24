@@ -625,7 +625,10 @@ awful.rules.rules = {
     -- },
     {
         rule_any = {
-            name = { "Open Folder", "Choose Files", "Save As", "Open Document" },
+            name = {
+                "Open Folder", "Choose Files", "Save As", "Open Document",
+                "Sign in to Steam", "Steam", "Shutdown", -- steam popups
+            },
             type = { "dialog", "splash" },
         },
         properties = { floating = true },
@@ -634,6 +637,18 @@ awful.rules.rules = {
         end,
     },
     { rule = { class = "Steam" }, properties = { tag = tags["👾"] } },
+    {
+        rule_any = {
+            class = { "steamwebhelper", "steam" }
+        },
+        properties = {
+            floating = true,
+        },
+        callback = function(s)
+            awful.placement.centered(s, nil)
+        end,
+    },
+
     { rule = { class = "keepassxc" }, properties = { floating = true } },
     {
         rule_any = { class = { "Telegram", "TelegramDesktop" } },
