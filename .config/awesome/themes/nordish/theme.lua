@@ -1,7 +1,5 @@
 -------------------------------
---  "nordish" awesome theme  --
---   By Daniel K. (dnlklmts)   --
--- https://github.com/arcticicestudio/nord --
+-- based on https://github.com/arcticicestudio/nord --
 -------------------------------
 
 local theme_assets = require("beautiful.theme_assets")
@@ -14,13 +12,10 @@ local themes_path  = gfs.get_dir("config")
 -- {{{ Main
 local theme        = {}
 theme.wallpaper    = themes_path .. "themes/nordish/bg.jpg"
--- theme.wallpaper = '~/Pictures/Wallpapers/our_dream.png'
--- theme.wallpaper    = "~/Pictures/Wallpapers/red-sky.png"
-
 
 -- {{{ Styles
--- theme.font       = "Meslo LG S 8"
 theme.font                  = "FiraCode Nerd Font Bold 8"
+theme.emoji_font            = "Twemoji"
 
 -- {{{ Colors
 theme.fg_normal             = "#ECEFF4"

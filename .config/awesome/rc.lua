@@ -222,7 +222,7 @@ screen.connect_signal("property::geometry", set_wallpaper)
 -- Add tags to each screen
 local tags = sharedtags({
     { name = "🌐", screen = 1, layout = awful.layout.suit.max },
-    { name = "MGS", screen = 1, layout = lain.layout.termfair.center },
+    { name = "MSG", screen = 1, layout = lain.layout.termfair.center },
     { name = "DEV", screen = 1, layout = awful.layout.suit.tile },
     { name = "TXT", screen = 1, layout = awful.layout.suit.max },
     { name = "IMG", screen = 1, layout = awful.layout.suit.max },
@@ -652,11 +652,11 @@ awful.rules.rules = {
     { rule = { class = "keepassxc" }, properties = { floating = true } },
     {
         rule_any = { class = { "Telegram", "TelegramDesktop" } },
-        properties = { tag = tags["MGS"] }
+        properties = { tag = tags["MSG"] }
     },
     {
         rule_any = { class = { "pachca", "pachca" } },
-        properties = { tag = tags["MGS"] }
+        properties = { tag = tags["MSG"] }
     },
     {
         rule_any = { class = { "transmission-gtk", "Transmission-gtk" } },
@@ -667,7 +667,7 @@ awful.rules.rules = {
             class = { "Gajim" },
             role = { "roster", "messages" },
         },
-        properties = { tag = tags["MGS"] },
+        properties = { tag = tags["MSG"] },
     },
     {
         rule_any = { class = { "VirtualBox", "VirtualBox Manager", "VirtualBox Machine" } },
