@@ -5,7 +5,6 @@ if [[ $# -eq 1 ]]; then
 else
     selected=$(find \
         ~/.config/ \
-        ~/.local/share/scripts/ \
         ~/Documents/Code/Golang/books/ \
         ~/Documents/Code/Golang/courses/ \
         ~/Documents/Code/Golang/personal/ \
