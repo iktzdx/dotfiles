@@ -134,6 +134,7 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 bindkey -s '^[f' 'tmux-sessionizer^M'
+bindkey -s '^[s' 'tmux-sessionizer ~/.local/share/scripts/^M'
 bindkey -s '^[t' 'tmux-sessionizer ~/.config/tmux/^M'
 bindkey -s '^[v' 'tmux-sessionizer ~/.config/nvim/^M'
 
