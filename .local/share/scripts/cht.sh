@@ -1,48 +1,111 @@
 #!/usr/bin/env bash
 
-wait="& while [ : ]; do sleep 1; done"
-langs=$(echo "golang lua bash" | tr ' ' '\n')
-utils=$(echo "find file xargs sed awk" | tr ' ' '\n')
+# Define a constant for the sleep command
+WAIT_COMMAND="& while [ : ]; do sleep 1; done"
+
+# Declare arrays of predefined programming languages and core utilities
+LANGS=(golang lua bash)
+UTILS=(find file xargs sed awk)
 
 main() {
-    use_predefined=$(printf "yes\nno" | fzf --prompt "Use predefined options? ")
-    [ "$use_predefined" == "yes" ] && curl_predefined || curl_manual
+    local opts=(yes no exit)
+
+    PS3="Use predefined options? "
+    select option in "${opts[@]}"; do
+        case $option in
+            "yes") curl_predefined ;;
+            "no") curl_manual ;;
+            "exit") shutdown ;;
+        esac
+        break
+    done
 }
 
 curl_predefined() {
-    selected=$(printf "%s\n%s" "$langs" "$utils" | fzf)
-    echo "$langs" | grep -qs "$selected" && curl_chtsh_lang || curl_chtsh_util
+    local opts=(back exit)
+
+    PS3="Select a language or utility: "
+    select selected in "${LANGS[@]}" "${UTILS[@]}" "${opts[@]}"; do
+        case $selected in
+            "back") main ;;
+            "exit") shutdown ;;
+            *) curl_chtsh "$selected";;
+        esac
+        break
+    done
+}
+
+curl_chtsh() {
+    local selected="$1"
+    local query
+
+    if [[ "${LANGS[*]}" =~ $selected ]]; then
+        query="$(get_query_string)"
+        curl_chtsh_lang "$selected" "$query"
+    else
+        query="$(get_query_string)"
+        curl_chtsh_util "$selected" "$query"
+    fi
 }
 
 curl_chtsh_lang() {
-    tmux neww bash -c "curl cht.sh/$selected/$(get_query_string) $wait"
+    local selected="$1"
+    local query="$2"
+
+    tmux neww bash -c "curl cht.sh/$selected/$query $WAIT_COMMAND"
+    shutdown
 }
 
 curl_chtsh_util() {
-    tmux neww bash -c "curl cht.sh/$selected~$(get_query_string) $wait"
+    local selected="$1"
+    local query="$2"
+
+    tmux neww bash -c "curl cht.sh/$selected~$query $WAIT_COMMAND"
+    shutdown
 }
 
 curl_manual() {
-    opt=$(printf "lang\nutil" | fzf --prompt "Programming language or core utils? ")
-    [ "$opt" == "lang" ] && curl_manual_lang || curl_manual_util
+    local opts=(lang util back exit)
+
+    PS3="Programming language or core utils? "
+    select option in "${opts[@]}"; do
+        case $option in
+            "lang") curl_manual_lang ;;
+            "util") curl_manual_util ;;
+            "back") main ;;
+            "exit") shutdown ;;
+        esac
+        break
+    done
 }
 
 curl_manual_lang() {
-    read -r -p "lang: " selected
-    curl_chtsh_lang
-    exit 0
+    local query
+
+    read -r -p "Programming language: " selected
+    query="$(get_query_string)"
+
+    curl_chtsh_lang "$selected" "$query"
 }
 
 curl_manual_util() {
-    read -r -p "util: " selected
-    curl_chtsh_util
-    exit 0
+    local query
+
+    read -r -p "Core utility name: " selected
+    query="$(get_query_string)"
+
+    curl_chtsh_util "$selected" "$query"
 }
 
 get_query_string() {
-    read -r -p "query: " query;
+    read -r -p "Search query: " query;
     query_string=${query// /+}
     echo "$query_string"
+}
+
+shutdown() {
+    echo "Exiting with code 0"
+    exit 0
 }
 
 main
