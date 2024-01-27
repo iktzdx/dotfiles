@@ -55,4 +55,5 @@
 !.local/opt/
 !.local/opt/tmux-sessionizer/
 !.local/opt/tmux-sessionizer/tsm.sh
+!.local/share/scripts/rm_by_mimetype.sh
 
