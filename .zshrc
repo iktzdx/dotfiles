@@ -133,10 +133,11 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
-bindkey -s '^[f' 'tmux-sessionizer^M'
-bindkey -s '^[s' 'tmux-sessionizer ~/.local/share/scripts/^M'
-bindkey -s '^[t' 'tmux-sessionizer ~/.config/tmux/^M'
-bindkey -s '^[v' 'tmux-sessionizer ~/.config/nvim/^M'
+bindkey -s '^[f' '~/.local/bin/tmux-sessionizer^M'
+bindkey -s '^[d' '~/.local/bin/tmux-sessionizer ~/Documents/Notes/^M'
+bindkey -s '^[s' '~/.local/bin/tmux-sessionizer ~/.local/share/scripts/^M'
+bindkey -s '^[t' '~/.local/bin/tmux-sessionizer ~/.config/tmux/^M'
+bindkey -s '^[v' '~/.local/bin/tmux-sessionizer ~/.config/nvim/^M'
 
 ## fzf
 source '/usr/share/fzf/key-bindings.zsh'
