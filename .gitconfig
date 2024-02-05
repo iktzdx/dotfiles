@@ -1,5 +1,108 @@
+[core]
+    editor=/usr/bin/nvim
+    pager=less -x4
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
 [user]
-	name = Daniel Kolomeets
-	email = kolomeetz.dany@yandex.ru
+    name = Daniel Kolomeets
+    email = kolomeetz.dany@yandex.ru
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = red reverse
+    local = blue
+    remote = green
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red bold
+    new = green
+    plain = white
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[push]
+    default = current
+[pull]
+    default = current
+[diff]
+    mnemonicprefix = true
+[branch]
+    autosetuprebase = always
+[apply]
+    whitespace = nowarn
+
+[alias]
+    # See more <https://github.com/durdn/cfg/blob/master/.gitconfig>
+
+    # Basic shortcuts
+    b = branch
+    cl = clone
+    co = checkout
+    cp = cherry-pick
+    d = diff
+    st = status
+    ## Tweak defaults
+    ai = add --interactive
+    branch = branch -ra
+    diff = diff --word-diff
+    grep = grep -Ii
+    ## Commit commands
+    ci = commit
+    cm = commit -m
+    ca = commit -a --verbose
+    cam = commit -a -m
+    amend = commit --amend --verbose
+    caa = commit -a --amend -C HEAD
+    ## Diff commands
+    dc = diff --cached # Shows changes between staged and last commit
+    ds = diff --stat # Shows statistics of changes in working directory
+    ## Reset commands
+    r = reset # Resets staged changes
+    rh = reset --hard # Resets staged changes, discarding changes in working directory
+    r1 = reset HEAD^ # Resets to previous commit, keeping changes in working directory
+    rh1 = reset HEAD^ --hard # Resets to previous commit, discarding changes in working directory
+    rhu = reset --hard @{u} # Resets to state of remote tracking branch
+    unstage = reset HEAD -- # Unstages changes in index, preserving in working directory
+    undo = undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f" # <https://megakemp.com/2016/08/25/git-undo/>
+    ## Stash operations
+    sl = stash list # Lists all saved stashes
+    sa = stash apply # Applies <stash_id>, but keeps it in the stashes
+    ss = stash save # Saves changes to a stash, with a message
+    sd = stash drop # Drops <stash_id>
+    sp = stash pop # Applies the last stash and removes it from stashes
+
+    # Explore your history, the commits
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn]" --decorate --numstat
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lga = "!f() { git ls --graph --all; }; f"
+    ## Show the history of a file, with diffs
+    fl = log -u
+    filelog = log -u
+    ## Log commands to inspect (recent) history
+    last = "!f() { git ll -1 HEAD; }; f" # Show modified files in last commit
+    dlc = diff --cached HEAD^ # Show a diff last commit
+    ## Show content (full diff) of a commit given a revision
+    dr  = "!f() { git diff "$1"^.."$1"; }; f"
+    lc  = "!f() { git ll "$1"^.."$1"; }; f"
+
+    # Finding files and content inside files (grep)
+    f = "!git ls-files | grep -i" # Find a file path in codebase
+    grep = grep -Ii # Search/grep your entire codebase for a string
+
+    # Personal shortcuts
+    fp = !git fetch && git pull --all # Pull all resent changes
+    dtf = !git --git-dir=$HOME/Documents/Code/GitHub/dotfiles/ --work-tree=$HOME # Manage dotfiles bare repo
+    la = "!git config -l | grep alias | cut -c 7-" # List all your aliases

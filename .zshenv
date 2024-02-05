@@ -1,6 +1,6 @@
 export XCURSOR_PATH=/usr/share/icons
 
-export LESS='-R --use-color -Dd+r$Du+b'
+export LESS='-iXF -R --use-color -Dd+r$Du+b'
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export MANPAGER="bat"
 
