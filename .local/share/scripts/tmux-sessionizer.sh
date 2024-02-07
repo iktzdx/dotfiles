@@ -4,13 +4,10 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     selected=$(find \
-        ~/.config/ \
-        ~/Documents/Code/Golang/books/ \
-        ~/Documents/Code/Golang/courses/ \
-        ~/Documents/Code/Golang/personal/ \
-        ~/Documents/Code/Golang/yt/ \
+        ~/ \
+        ~/Documents/Code/Golang/ \
         ~/Documents/Code/TypeScript/ \
-        -mindepth 1 -maxdepth 1 -type d | fzf)
+        -mindepth 1 -maxdepth 2 -type d | fzf)
 fi
 
 if [[ -z "$selected" ]]; then
