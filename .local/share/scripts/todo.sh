@@ -15,7 +15,7 @@ else
     SWITCH_CMD="tmux switch-client -t $CURRENT_SESH"
 fi
 
-NVIM_CMD="nvim -c 'norm Go' $NOTE_PATH"
+NVIM_CMD="nvim $NOTE_PATH"
 CMD="$NVIM_CMD && $SWITCH_CMD"
 
 if ! tmux has-session -t "$SESH" 2> /dev/null; then
