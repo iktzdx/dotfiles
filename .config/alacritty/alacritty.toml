@@ -1,4 +1,5 @@
-import = ["/home/kurisumasu/.config/alacritty/themes/one_dark.toml"]
+# https://github.com/alacritty/alacritty-theme
+import = ["~/.config/alacritty/themes/onedark.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = false
@@ -58,7 +59,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [window]
 decorations = "none"
-opacity = 0.9
+opacity = 0.95
 
 [window.class]
 general = "Alacritty"
