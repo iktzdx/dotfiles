@@ -9,6 +9,9 @@
     name = Daniel Kolomeets
     email = kolomeetz.dany@yandex.ru
 
+[includeIf "gitdir:~/Documents/work/"]
+    path = ~/.config/git/config-work
+
 [color]
     branch = auto
     diff = auto
