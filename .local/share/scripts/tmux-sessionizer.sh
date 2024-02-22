@@ -3,11 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find \
-        ~/ \
-        ~/Documents/Code/Golang/ \
-        ~/Documents/Code/TypeScript/ \
-        -mindepth 1 -maxdepth 2 -type d | fzf)
+    selected=$(find ~/.dotfiles/ ~/code/til/ ~/code/dump/ ~/code/personal/ ~/code/neetcode.io/ -mindepth 1 -maxdepth 1 -type d -not -path '*.git*' | fzf)
 fi
 
 if [[ -z "$selected" ]]; then
